@@ -27,7 +27,7 @@
         nestingLevels:1,
         actions: {
             onDrop(data) { // receives the new list structure JSON after dropping an item
-                // console.log($(this))
+                console.log(data)
                 $.ajax({
                     type: "post",
                     url: "{{url('hrm-menu/update')}}",
