@@ -41,4 +41,19 @@ class HrmMenu {
         $menu = Menu::whereName($name)->first();
         return view('hrmmenu::menu',['menu'=>$menu]);
     }
+
+    public function findByName($name)
+    {
+        # code...
+
+        $menu = Menu::whereName($name)->first();
+        return $menu;
+    }
+
+    public function findById($id)
+    {
+        # code...
+        $menu = Menu::find($id);
+        return $menu;
+    }
 }

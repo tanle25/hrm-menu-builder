@@ -110,7 +110,7 @@
 
     </div>
 </div>
-
+{{-- @dd(Menu::findByName('main')->items) --}}
 {{-- {!!Menu::buildByName('main')!!} --}}
 
 <form action="{{ url('hrm-menu/add') }}" method="post">
