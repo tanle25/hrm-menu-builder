@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Hrm\\MenuBuilder\\HrmMenuServiceProvider"
+                "Hrm\\MenuBuilder\\Providers\\HrmMenuServiceProvider"
             ]
         }
     }
