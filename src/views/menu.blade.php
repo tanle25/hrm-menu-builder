@@ -8,7 +8,7 @@
 
         <ul class=" visited:hidden opacity-0 -z-10 bg-white group-hover:z-10 ease-in-out duration-300 absolute min-w-[200px] scale-y-0 group-hover:scale-y-100 mt-1 w-max group-hover:visited:visible group-hover:translate-y-0 group-hover:opacity-100 top-12 dark:bg-gray-800 rounded-b-xl shadow-md">
             @foreach ($item->children as $child )
-            <li class="hover:text-white bg-white p-3 cursor-pointer hover:bg-gray-700">{{$child->label}}</li>
+            <li class="hover:text-white bg-white p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800">{{$child->label}}</li>
             @endforeach
         </ul>
 
