@@ -1,0 +1,19 @@
+.nested-sort {
+    padding: 0;
+  }
+
+  .nested-sort--enabled li {
+    cursor: move;
+  }
+
+
+
+  /* ns-dragged is the class name of the item which is being dragged */
+  .nested-sort .ns-dragged {
+    border: 1px solid red;
+  }
+
+  /* ns-targeted is the class name of the item on which the dragged item is hovering */
+  .nested-sort .ns-targeted {
+    border: 1px solid green;
+  }

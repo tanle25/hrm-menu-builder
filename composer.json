@@ -1,0 +1,21 @@
+{
+    "name": "hrm/menu-builder",
+    "type": "library",
+    "require": {
+        "php": ">=8.0",
+        "illuminate/support": ">=5.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hrm\\MenuBuilder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tan Le",
+            "email": "tanltps04690@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
