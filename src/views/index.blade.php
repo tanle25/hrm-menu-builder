@@ -111,7 +111,7 @@
     </div>
 </div>
 
-{!!Menu::buildByName('main')!!}
+{{-- {!!Menu::buildByName('main')!!} --}}
 
 <form action="{{ url('hrm-menu/add') }}" method="post">
     @csrf
