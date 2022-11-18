@@ -17,5 +17,13 @@
             "email": "tanltps04690@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hrm\\MenuBuilder\\HrmMenuServiceProvider"
+            ]
+        }
+    }
+
 }
