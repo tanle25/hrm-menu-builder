@@ -70,15 +70,16 @@ class HrmMenuBuilderController extends Controller{
     {
         # code...
 
-        $menu = Menu::find($request->menu);
-        $items = $menu->items;
-
-        foreach ($request->data as $item) {
+        // $menu = Menu::find($request->menu);
+        $data = $request->data;
+        foreach ($data as $item) {
             # code...
-            $items->where('id',$item['id'])->first()->update([
-                'sort'=>$item['order'],
-                'menu_item_id'=> isset($item['parent']) ? $item['parent'] : null
-            ]);
+            MenuItem::find($item['id'])->update(
+                [
+                    'sort'=>$item['order'],
+                    'menu_item_id'=>isset($item['parent']) ? $item['parent'] : null
+                ]
+            );
         }
 
         return response()->json($request->all());
