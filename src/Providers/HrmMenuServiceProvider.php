@@ -26,10 +26,14 @@ class HrmMenuServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
         $this->publishes([
             __DIR__.'/../views'=>resource_path('views/vendor/hrm-menu', 'view')
-        ]);
+        ],'views');
         $this->publishes([
             __DIR__.'/../assets'=>public_path('vendor/hrm')
         ],'public');
+        $this->publishes([
+            __DIR__.'/../migrations'=>database_path('migrations')
+        ],'migrations');
+
     }
 
     /**
