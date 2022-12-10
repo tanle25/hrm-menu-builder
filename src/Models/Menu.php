@@ -12,6 +12,6 @@ class Menu extends Model{
     public function items()
     {
         # code...
-        return $this->hasMany(MenuItem::class);
+        return $this->hasMany(MenuItem::class,'id','menu_item_id');
     }
 }
