@@ -2,9 +2,11 @@
 
 namespace Hrm\MenuBuilder\Providers;
 
+use Hrm\MenuBuilder\Component\TestComponent;
+use Livewire\Livewire;
+use Hrm\MenuBuilder\Facades\HrmMenu;
 use Illuminate\Support\ServiceProvider;
 use Hrm\MenuBuilder\Controllers\HrmMenuBuilderController;
-use Hrm\MenuBuilder\Facades\HrmMenu;
 
 class HrmMenuServiceProvider extends ServiceProvider
 {
@@ -45,6 +47,5 @@ class HrmMenuServiceProvider extends ServiceProvider
     {
         //
         $this->loadRoutesFrom(__DIR__.'/../routes.php');
-
     }
 }
