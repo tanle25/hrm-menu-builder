@@ -9,14 +9,23 @@ use App\Http\Controllers\Controller;
 use Hrm\MenuBuilder\Models\MenuItem;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class HrmMenuBuilderController extends Controller{
     // public function index()
     // {
     //     # code...
-    //     return view()
+    //     return view();
     // }
 
+    public function delete(MenuItem $item)
+    {
+        # code...
+        // dd($item);
+        $item->delete();
+        $menu = $item->menu;
+        return back()->with(['menu'=>$menu]);
+    }
     public function storeMenu(Request $request)
     {
         # code...
@@ -66,21 +75,31 @@ class HrmMenuBuilderController extends Controller{
         return back()->with(['menu'=>$_menu]);
     }
 
+    public function addCategoryItem(Menu $menu, Request $request)
+    {
+        # code...
+        // dd($request->all());
+        foreach ($request->items as $key => $value) {
+            # code...
+            $menu->items()->create([
+                'label'=>$value,
+                'link'=>url($key)
+            ]);
+        }
+        return back()->with(['menu'=>$menu]);
+    }
+
     public function update(Request $request)
     {
         # code...
 
-        // $menu = Menu::find($request->menu);
         $data = $request->data;
-        foreach ($data as $item) {
-            # code...
-            MenuItem::find($item['id'])->update(
-                [
-                    'sort'=>$item['order'],
-                    'menu_item_id'=>isset($item['parent']) ? $item['parent'] : null
-                ]
-            );
-        }
+        MenuItem::find($data['id'])->update(
+            [
+                'sort'=>$data['index'],
+                'menu_item_id'=> isset($data['parent']) ? $data['parent'] : null
+            ]
+        );
 
         return response()->json($request->all());
     }

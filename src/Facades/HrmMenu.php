@@ -4,6 +4,8 @@ namespace Hrm\MenuBuilder\Facades;
 use Hrm\MenuBuilder\Models\Menu;
 
 class HrmMenu {
+
+    protected $arr = array();
     public function render()
     {
         # code...
@@ -27,10 +29,7 @@ class HrmMenu {
     public function build($id)
     {
         # code...
-
-        // return
         $menu = Menu::find($id);
-        // dd($menu);
         return view('hrmmenu::menu', ['menu'=>$menu]);
     }
 
@@ -55,5 +54,20 @@ class HrmMenu {
         # code...
         $menu = Menu::find($id);
         return $menu;
+    }
+
+    public function set($category, $item)
+    {
+        # code...
+        if(!isset($this->arr[$category])){
+            $this->arr[$category] = [];
+        }
+        array_push($this->arr[$category],$item);
+    }
+
+    public function get()
+    {
+        # code...
+        return $this->arr;
     }
 }
