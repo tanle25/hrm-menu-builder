@@ -56,7 +56,7 @@ $curent = $menus->first();
                 <div class="menu-item-content hidden">
                     <form class="py-3" action="{{url('hrm-menu/add-category-item',$curent->id)}}" method="post">
                         @csrf
-                        <div class=" max-h-96 overflow-y-auto ">
+                        <div class=" max-h-96 overflow-y-auto px-3 ">
                             @foreach ($menuCategory as $menuLink )
                             @php
                                 $rand = Str::random(12);
@@ -169,8 +169,6 @@ $curent = $menus->first();
 
     </div>
 </div>
-{{-- @dd(Menu::findByName('main')->items) --}}
-{{-- {!!Menu::buildByName('main')!!} --}}
 
 <form action="{{ url('hrm-menu/add') }}" method="post">
     @csrf

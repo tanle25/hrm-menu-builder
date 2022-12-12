@@ -59,6 +59,9 @@ class HrmMenu {
     public function set($category, $item)
     {
         # code...
+        /**
+         * @param item array ['title'=>'slug]
+         */
         if(!isset($this->arr[$category])){
             $this->arr[$category] = [];
         }

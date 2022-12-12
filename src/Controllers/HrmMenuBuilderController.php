@@ -2,14 +2,10 @@
 
 namespace Hrm\MenuBuilder\Controllers;
 
-use HrmMenu;
 use Illuminate\Http\Request;
 use Hrm\MenuBuilder\Models\Menu;
 use App\Http\Controllers\Controller;
 use Hrm\MenuBuilder\Models\MenuItem;
-use Illuminate\Support\Facades\Redis;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Str;
 
 class HrmMenuBuilderController extends Controller{
     // public function index()
@@ -77,10 +73,10 @@ class HrmMenuBuilderController extends Controller{
 
     public function addCategoryItem(Menu $menu, Request $request)
     {
+
         # code...
         // dd($request->all());
         foreach ($request->items as $key => $value) {
-            # code...
             $menu->items()->create([
                 'label'=>$value,
                 'link'=>url($key)
