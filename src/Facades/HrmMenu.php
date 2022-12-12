@@ -56,9 +56,9 @@ class HrmMenu {
         return $menu;
     }
     /**
-         * @param array $item
-         * item = array ['title'=>'slug]
-         */
+     * @param string $category // Ten danh muc
+     * @param array $item  //['title'=>'slug]
+     */
 
     public function set(string $category, array $item)
     {
