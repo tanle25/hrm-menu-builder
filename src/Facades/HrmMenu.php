@@ -55,13 +55,15 @@ class HrmMenu {
         $menu = Menu::find($id);
         return $menu;
     }
+    /**
+         * @param array $item
+         * item = array ['title'=>'slug]
+         */
 
-    public function set($category, $item)
+    public function set(string $category, array $item)
     {
         # code...
-        /**
-         * @param item array ['title'=>'slug]
-         */
+
         if(!isset($this->arr[$category])){
             $this->arr[$category] = [];
         }
